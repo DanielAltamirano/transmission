@@ -157,6 +157,12 @@ if(TR_VERSION_DEV OR NOT "${TR_VERSION_BETA_NUMBER}" STREQUAL "")
 endif()
 set(TR_USER_AGENT_PREFIX "${TR_SEMVER}")
 
+# Custom build marker for this fork (background-thread completion move).
+# Differentiates the locally-built binary from official releases in
+# `--version`, the RPC version, and the BitTorrent user-agent. Remove this line
+# if the change lands upstream. See https://github.com/DanielAltamirano/transmission
+string(APPEND TR_USER_AGENT_PREFIX "+bgmove2")
+
 # derived from above: peer-id prefix. https://www.bittorrent.org/beps/bep_0020.html
 # chars 4, 5, 6 are major, minor, patch in https://en.wikipedia.org/wiki/Base62
 # char 7 is '0' for a stable release, 'B' for a beta release, or 'Z' for a dev build

@@ -2,6 +2,7 @@
 .vscode
 .DS_Store
 
+build-release
 /beta
 /build
 Transmission.xcodeproj/*.xcworkspace
